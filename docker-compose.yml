@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: my-web-container
+    network_mode : host
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+  redis:
+    image: redis
+    container_name: my-redis-container
+    network_mode : host
+volumes:
+  logvolume01: {}
